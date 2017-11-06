@@ -1,0 +1,15 @@
+<odoo>
+	<data>
+		<record id="bja_product_template_only_form_view" model="ir.ui.view">
+            <field name="name">bja.product_template_only_form_view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="priority">22</field>
+            <field name="arch" type="xml">
+                <field name="default_code" position="before">
+                    <field name="bja_uom_id"/>
+                </field>
+            </field>
+        </record>
+	</data>
+</odoo>

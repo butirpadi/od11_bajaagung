@@ -1,0 +1,71 @@
+<odoo>
+	<data>
+		<!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="bja_app.uom_list">
+      <field name="name">Unit of Measurement</field>
+      <field name="model">bja.unit_of_measure</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+    
+    <record id="bja_app.uom_form" model="ir.ui.view">
+        <field name="name">Unit of Measurement</field>
+        <field name="model">bja.unit_of_measure</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form string="Product">
+                <sheet>
+                  <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Name"/>
+                        <h1><field name="name"  /></h1>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="bja_app.uom_action_window">
+      <field name="name">Unit of Measurement</field>
+      <field name="res_model">bja.unit_of_measure</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="bja_app.action_server">
+      <field name="name">bja_app server</field>
+      <field name="model_id" ref="model_bja_app_bja_app"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="bja_app" id="bja_app.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="bja_app.menu_1" parent="bja_app.menu_root"/>
+    <menuitem name="Menu 2" id="bja_app.menu_2" parent="bja_app.menu_root"/>
+    -->
+    <!-- actions -->
+    
+    <menuitem name="Unit of Measurement" id="bja_app.menu_unit_of_measure" parent="stock.menu_stock_inventory_control" action="bja_app.uom_action_window" sequence="1" />
+    <!-- <menuitem name="Server to list" id="bja_app" parent="bja_app.menu_2" action="bja_app.action_server"/>  -->
+    
+	</data>
+</odoo>

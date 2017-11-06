@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bja_app_uom,access_bja_app_uom,model_bja_unit_of_measure,,1,1,1,1
